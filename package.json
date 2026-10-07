@@ -1,0 +1,67 @@
+{
+  "name": "@bfocus/monitor-react-native",
+  "version": "0.1.0",
+  "description": "Monitoramento de erros do bFocus para React Native — erros do app viram demanda, agrupados por causa e ligados ao cliente afetado.",
+  "license": "MIT",
+  "author": "Berni Software",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "node scripts/rm.mjs dist dist-test",
+    "build": "node scripts/rm.mjs dist && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/cjs-package.mjs",
+    "build:test": "node scripts/rm.mjs dist-test && tsc -p tsconfig.test.json",
+    "test": "npm run build && npm run build:test && node --test --test-concurrency=1 dist-test/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit",
+    "sync:engine": "node scripts/sync-engine.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-native": ">=0.60"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "bfocus",
+    "monitoring",
+    "error-tracking",
+    "crash-reporting",
+    "react-native",
+    "hermes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernisoftware/bfocus.git",
+    "directory": "monitor/react-native"
+  },
+  "homepage": "https://bfocus.com.br",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "typescript": "~5.9.2"
+  }
+}

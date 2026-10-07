@@ -1,0 +1,14 @@
+{
+  // Testes em TS compilados para dist-test/ e rodados com `node --test` (o React Native é simulado:
+  // ErrorUtils e HermesInternal falsos). Importam o pacote pelo "exports": rodam contra o artefato
+  // CONSTRUÍDO.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./test",
+    "outDir": "./dist-test",
+    "declaration": false,
+    "noUncheckedIndexedAccess": false,
+    "types": ["node"]
+  },
+  "include": ["test/**/*.ts"]
+}

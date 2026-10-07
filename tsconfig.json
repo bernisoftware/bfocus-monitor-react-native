@@ -1,0 +1,26 @@
+{
+  // Build ESM (dist/esm). O build CJS estende este arquivo (tsconfig.cjs.json).
+  // "DOM" só pelos tipos de fetch/AbortController (que o React Native tem); nada de Node aqui.
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM"],
+    "types": [],
+    "rootDir": "./src",
+    "outDir": "./dist/esm",
+    "declaration": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "removeComments": false
+  },
+  "include": ["src/**/*.ts"]
+}
