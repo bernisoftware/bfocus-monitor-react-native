@@ -54,8 +54,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bernisoftware/bfocus.git",
-    "directory": "monitor/react-native"
+    "url": "git+https://github.com/bernisoftware/bfocus-monitor-react-native.git"
   },
   "homepage": "https://bfocus.com.br",
   "devDependencies": {
